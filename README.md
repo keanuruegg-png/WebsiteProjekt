@@ -4,7 +4,11 @@ Meine persönliche Website.
 
 ## Über dieses Projekt
 
-Diese Website wird mit HTML, CSS und JavaScript gebaut.
+Diese Website wird mit folgenden Technologien gebaut:
+
+- HTML
+- CSS
+- JavaScript
 
 ## Lokal starten
 
