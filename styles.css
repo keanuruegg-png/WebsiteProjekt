@@ -577,7 +577,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 .preset-tile {
   position: relative;
-  aspect-ratio: 3/4;
+  aspect-ratio: 2/3; /* matches the before/after preview images (label baked in) */
   border-radius: var(--radius-md);
   overflow: hidden;
   margin: 0;
@@ -624,27 +624,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 .preset-tile:hover .preset-tile-zoom { opacity: 1; transform: scale(1); }
 .preset-tile-trigger:hover .preset-tile-zoom { background: var(--color-accent); }
-.preset-tile figcaption {
-  position: absolute;
-  inset: auto 0 0 0;
-  padding: 16px 14px;
-  background: linear-gradient(180deg, transparent, rgba(10,10,11,0.85));
-  color: white;
-  font-size: 14px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  pointer-events: none;
-}
-.preset-tile-num {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--color-accent);
-  background: rgba(255,255,255,0.12);
-  padding: 2px 7px;
-  border-radius: var(--radius-pill);
-}
 @media (max-width: 480px) { .preset-showcase { max-width: 320px; gap: 12px; } }
 
 .presets-content .section-eyebrow { color: #93B4FF; }
