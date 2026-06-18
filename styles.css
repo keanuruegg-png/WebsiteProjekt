@@ -1179,9 +1179,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   letter-spacing: 0.05em;
 }
 @media (max-width: 700px) {
-  .lightbox-nav { width: 42px; height: 42px; margin: 0 8px; }
+  /* Take the arrows out of the flow and overlay them on the image edges so
+     the stage centers in the full viewport (was pushed off-centre before). */
+  .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    margin: -21px 0 0 0; /* half of 42px → vertical centre without transform */
+    width: 42px;
+    height: 42px;
+    z-index: 4;
+  }
+  .lightbox-prev { left: 10px; }
+  .lightbox-next { right: 10px; }
   .lightbox-close { top: 16px; right: 16px; width: 38px; height: 38px; }
-  .lightbox-stage, .lightbox-stage img { max-width: 90vw; max-height: 74vh; }
+  .lightbox-stage, .lightbox-stage img { max-width: 92vw; max-height: 80vh; }
 }
 
 /* ============================================
