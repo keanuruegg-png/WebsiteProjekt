@@ -64,6 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
     opt5: 'Football Presets',
     opt6: 'Etwas anderes',
     footer_copy: '© 2026 KIIFRAMES · Basel, Schweiz',
+    footer_imprint: 'Impressum',
+    footer_privacy: 'Datenschutz',
     mf_title: 'Sportfotografie Fussball',
     mf_price: 'CHF 25.– pro Spieler',
     mf_text: 'Ich begleite dein Team an einem Spieltag und liefere dir starke, individuelle Aufnahmen jedes Spielers — Action, Emotion, Portraitmomente. Perfekt für Social Media, Sponsoren oder als Erinnerung an die Saison.',
