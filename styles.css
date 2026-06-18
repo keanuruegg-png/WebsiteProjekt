@@ -119,19 +119,33 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   padding: 18px 32px;
   transition: padding 0.3s var(--ease-out), background 0.3s var(--ease-out);
 }
-.navbar.scrolled {
-  padding: 12px 32px;
-  background: rgba(250, 250, 250, 0.7);
-  backdrop-filter: blur(16px) saturate(150%);
-  -webkit-backdrop-filter: blur(16px) saturate(150%);
-  border-bottom: 1px solid var(--color-line);
-}
+.navbar.scrolled { padding: 14px 24px; }
 .navbar-inner {
   max-width: 1240px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0;
+  border: 1px solid transparent; /* reserved so the pill border adds no shift */
+  border-radius: var(--radius-pill);
+  transition:
+    max-width 0.45s var(--ease-out),
+    padding 0.45s var(--ease-out),
+    background-color 0.45s var(--ease-out),
+    border-color 0.45s var(--ease-out),
+    box-shadow 0.45s var(--ease-out);
+}
+/* Scrolled: the bar condenses into a centered floating glass pill;
+   it resets to full width once you scroll back to the very top. */
+.navbar.scrolled .navbar-inner {
+  max-width: 1080px;
+  padding: 9px 12px 9px 22px;
+  background-color: rgba(250, 250, 250, 0.72);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border-color: var(--color-line);
+  box-shadow: 0 14px 40px -18px rgba(20, 20, 26, 0.28);
 }
 .logo {
   font-family: var(--font-display);
@@ -180,6 +194,31 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 .nav-cta:hover { background: var(--gradient-rb); transform: translateY(-2px); }
 
+/* Social icon buttons (header + mobile menu) */
+.nav-socials { display: flex; align-items: center; gap: 8px; }
+.nav-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--color-line);
+  color: var(--color-ink-soft);
+  transition: transform 0.3s var(--ease-spring), background 0.3s var(--ease-out),
+              color 0.25s, border-color 0.25s, box-shadow 0.3s var(--ease-out);
+}
+.nav-social svg { transition: transform 0.4s var(--ease-spring); }
+.nav-social:hover {
+  background: var(--gradient-rb);
+  color: #fff;
+  border-color: transparent;
+  transform: translateY(-3px) scale(1.06);
+  box-shadow: 0 10px 22px -10px rgba(37, 99, 235, 0.55);
+}
+.nav-social:hover svg { transform: rotate(-8deg) scale(1.12); }
+.nav-social:active { transform: translateY(-1px) scale(0.98); }
+
 .nav-burger {
   display: none;
   flex-direction: column;
@@ -221,6 +260,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   opacity: 1;
   pointer-events: auto;
 }
+.mobile-socials { display: flex; gap: 16px; margin-top: 12px; }
+.mobile-socials .nav-social { width: 54px; height: 54px; }
 
 /* ============================================
    Hero
