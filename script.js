@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     form_msg: 'Nachricht',
     btn_send: 'Anfrage senden',
     btn_order: 'Per Mail bestellen',
-    form_hint: 'Öffnet dein E-Mail-Programm mit vorausgefüllter Nachricht. Lieber direkt? <a href="mailto:hello@kiiframes.ch">hello@kiiframes.ch</a>',
+    form_hint: 'Öffnet dein E-Mail-Programm mit vorausgefüllter Nachricht. Lieber direkt? <a href="mailto:info@kiiframes.ch">info@kiiframes.ch</a>',
     opt1: 'Sportfotografie Fussball',
     opt2: 'MMA Fotografie',
     opt3: 'Matchday Design',
@@ -298,7 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const message = form.elements.message.value.trim();
       const subject = encodeURIComponent('Anfrage: ' + topic + (name ? ' — ' + name : ''));
       const body = encodeURIComponent(message + '\n\n—\n' + name);
-      window.location.href = `mailto:hello@kiiframes.ch?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:info@kiiframes.ch?subject=${subject}&body=${body}`;
     });
   }
 
