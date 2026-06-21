@@ -39,9 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
     about_logo3: 'SMMAC',
     pre_eyebrow: '03 — Lightroom Presets',
     pre_title: 'Football<br>Presets',
-    pre_desc: 'Die vier Farbprofile, die ich selbst bei jedem Spieltag einsetze. Satte Grüntöne für den Rasen, kontrastreiches Flutlicht, true-to-life Trikotfarben. Einmal kaufen, für immer dein eigener Look — egal ob Smartphone-Klick oder Vollformat.',
+    pre_desc: 'Die vier Farbprofile, die ich selbst bei jedem Spieltag einsetze — abgestimmt auf Flutlicht und dunklere Lichtverhältnisse. Satte Grüntöne für den Rasen, sauberes, kontrastreiches Flutlicht, true-to-life Trikotfarben. Einmal kaufen, für immer dein eigener Look — egal ob Smartphone-Klick oder Vollformat.',
     pre_f1: '4 Lightroom-Presets (Desktop &amp; Mobile)',
-    pre_f2: 'Optimiert für Floodlight &amp; Tageslicht-Spiele',
+    pre_f2: 'Für Flutlicht &amp; dunklere Lichtverhältnisse',
     pre_f3: 'Sofortiger Download nach Kauf',
     pre_f4: 'Anleitung zur Installation inklusive',
     pre_note: 'Einmalig · Sofort-Download',
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     form_topic: "Worum geht's?",
     form_msg: 'Nachricht',
     btn_send: 'Anfrage senden',
-    btn_order: 'Per Mail bestellen',
+    btn_order: 'Zum Checkout',
     form_hint: 'Öffnet dein E-Mail-Programm mit vorausgefüllter Nachricht. Lieber direkt? <a href="mailto:info@kiiframes.ch">info@kiiframes.ch</a>',
     opt1: 'Sportfotografie Fussball',
     opt2: 'MMA Fotografie',
@@ -93,8 +93,8 @@ document.addEventListener('DOMContentLoaded', () => {
     mv_li1: 'Highlight-Clips, Aftermovies oder Social-Content',
     mv_li2: 'Preis nach Aufwand, Länge und Schnittumfang',
     mv_li3: 'Unverbindliche Erstanfrage per Mail',
-    mp_h3: 'Fast geschafft',
-    mp_text: 'Hier kommt später dein Checkout-Anbieter rein (z.B. Gumroad, Lemon Squeezy oder Stripe). Bis dahin kannst du Bestellungen direkt per Mail entgegennehmen.'
+    mp_h3: 'Presets sichern',
+    mp_text: 'Weiter zum sicheren Checkout (Kartenzahlung über Lemon Squeezy). Sobald deine Zahlung durch ist, kannst du alle 4 Football Presets samt Installations-Guide sofort herunterladen.'
   };
   const TITLE_DE = 'KIIFRAMES — Sportfotografie & Design aus Basel';
 
