@@ -93,8 +93,8 @@ document.addEventListener('DOMContentLoaded', () => {
     mv_li1: 'Highlight-Clips, Aftermovies oder Social-Content',
     mv_li2: 'Preis nach Aufwand, Länge und Schnittumfang',
     mv_li3: 'Unverbindliche Erstanfrage per Mail',
-    mp_h3: 'Fast geschafft',
-    mp_text: 'Hier kommt später dein Checkout-Anbieter rein (z.B. Gumroad, Lemon Squeezy oder Stripe). Bis dahin kannst du Bestellungen direkt per Mail entgegennehmen.'
+    mp_h3: 'Presets bestellen',
+    mp_text: 'Schreib mir kurz eine E-Mail und du bekommst deine 4 Football Presets — Download-Link und Rechnung — direkt von mir zurück, meist innert 24 Stunden. Persönlich, sicher, kein Konto nötig.'
   };
   const TITLE_DE = 'KIIFRAMES — Sportfotografie & Design aus Basel';
 
