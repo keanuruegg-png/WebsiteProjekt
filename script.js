@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     form_topic: "Worum geht's?",
     form_msg: 'Nachricht',
     btn_send: 'Anfrage senden',
-    btn_order: 'Per Mail bestellen',
+    btn_order: 'Zum Checkout',
     form_hint: 'Öffnet dein E-Mail-Programm mit vorausgefüllter Nachricht. Lieber direkt? <a href="mailto:info@kiiframes.ch">info@kiiframes.ch</a>',
     opt1: 'Sportfotografie Fussball',
     opt2: 'MMA Fotografie',
@@ -93,8 +93,8 @@ document.addEventListener('DOMContentLoaded', () => {
     mv_li1: 'Highlight-Clips, Aftermovies oder Social-Content',
     mv_li2: 'Preis nach Aufwand, Länge und Schnittumfang',
     mv_li3: 'Unverbindliche Erstanfrage per Mail',
-    mp_h3: 'Presets bestellen',
-    mp_text: 'Schreib mir kurz eine E-Mail und du bekommst deine 4 Football Presets — Download-Link und Rechnung — direkt von mir zurück, meist innert 24 Stunden. Persönlich, sicher, kein Konto nötig.'
+    mp_h3: 'Presets sichern',
+    mp_text: 'Weiter zum sicheren Checkout (Kartenzahlung über Lemon Squeezy). Sobald deine Zahlung durch ist, kannst du alle 4 Football Presets samt Installations-Guide sofort herunterladen.'
   };
   const TITLE_DE = 'KIIFRAMES — Sportfotografie & Design aus Basel';
 
