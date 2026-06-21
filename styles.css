@@ -932,6 +932,28 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   margin-top: 2px;
 }
 .form-hint a { color: var(--color-accent); font-weight: 600; }
+
+/* Desktop fallback when no mail app is configured: copy email / message */
+.form-fallback {
+  margin-top: 16px;
+  padding: 18px 20px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-soft);
+}
+.form-fallback[hidden] { display: none; }
+.form-fallback-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-ink-soft);
+  margin-bottom: 14px;
+}
+.form-fallback-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn-copy {
+  padding: 11px 18px;
+  min-height: 40px;
+  font-size: 14px;
+}
 @media (max-width: 520px) {
   .form-row { grid-template-columns: 1fr; }
   .contact-glass-panel { padding: 56px 24px; }

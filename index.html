@@ -36,7 +36,7 @@
 <link rel="stylesheet" href="fonts.css?v=1">
 
 <link rel="preload" as="image" href="images/basel-celly-scream.jpg" fetchpriority="high">
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=6">
 
 <!-- ===== Structured Data ===== -->
 <script type="application/ld+json">
@@ -328,6 +328,13 @@
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <p class="form-hint" data-i18n="form_hint">Opens your email app with a prefilled message. Prefer direct? <a href="mailto:info@kiiframes.ch">info@kiiframes.ch</a></p>
+      <div class="form-fallback" id="formFallback" hidden>
+        <p class="form-fallback-text" data-i18n="form_fb_text">No mail app opened? Copy your details and send from any account (Gmail, Outlook…):</p>
+        <div class="form-fallback-actions">
+          <button type="button" class="btn btn-ghost btn-copy" data-copy="info@kiiframes.ch"><span data-copy-label data-i18n="form_fb_email">Copy info@kiiframes.ch</span></button>
+          <button type="button" class="btn btn-ghost btn-copy" id="copyMsgBtn"><span data-copy-label data-i18n="form_fb_msg">Copy my message</span></button>
+        </div>
+      </div>
     </form>
   </div>
 </section>
@@ -462,6 +469,6 @@
   </div>
 </div>
 
-<script src="script.js?v=6"></script>
+<script src="script.js?v=7"></script>
 </body>
 </html>

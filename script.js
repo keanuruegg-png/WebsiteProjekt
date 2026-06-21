@@ -57,6 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
     btn_send: 'Anfrage senden',
     btn_order: 'Zum Checkout',
     form_hint: 'Öffnet dein E-Mail-Programm mit vorausgefüllter Nachricht. Lieber direkt? <a href="mailto:info@kiiframes.ch">info@kiiframes.ch</a>',
+    form_fb_text: 'Kein Mailprogramm geöffnet? Kopier deine Angaben und schick sie über ein beliebiges Konto (Gmail, Outlook …):',
+    form_fb_email: 'info@kiiframes.ch kopieren',
+    form_fb_msg: 'Nachricht kopieren',
     opt1: 'Sportfotografie Fussball',
     opt2: 'MMA Fotografie',
     opt3: 'Matchday Design',
@@ -287,8 +290,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape' && mobileMenu.classList.contains('open')) setMenu(false);
   });
 
-  /* ---------- Contact form -> opens mail client prefilled ---------- */
+  /* ---------- Contact form -> mail client, with copy fallback ----------
+     On desktop a mailto only works if a default mail app is configured;
+     many people use webmail and have none, so the click silently fails.
+     We still try mailto, but always reveal a copy fallback so anyone can
+     reach info@ from any account. */
   const form = document.getElementById('contactForm');
+  const formFallback = document.getElementById('formFallback');
+  const copyMsgBtn = document.getElementById('copyMsgBtn');
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -296,11 +305,48 @@ document.addEventListener('DOMContentLoaded', () => {
       const name = form.elements.name.value.trim();
       const topic = form.elements.topic.value;
       const message = form.elements.message.value.trim();
-      const subject = encodeURIComponent('Anfrage: ' + topic + (name ? ' — ' + name : ''));
-      const body = encodeURIComponent(message + '\n\n—\n' + name);
-      window.location.href = `mailto:info@kiiframes.ch?subject=${subject}&body=${body}`;
+      const subjectPlain = 'Anfrage: ' + topic + (name ? ' — ' + name : '');
+      const bodyPlain = message + '\n\n—\n' + name;
+      if (copyMsgBtn) copyMsgBtn.dataset.copy = 'An: info@kiiframes.ch\nBetreff: ' + subjectPlain + '\n\n' + bodyPlain;
+      if (formFallback) formFallback.hidden = false;
+      window.location.href = 'mailto:info@kiiframes.ch?subject=' + encodeURIComponent(subjectPlain) + '&body=' + encodeURIComponent(bodyPlain);
     });
   }
+
+  /* ---------- Copy-to-clipboard buttons ([data-copy]) ---------- */
+  function flashCopied(btn) {
+    const label = btn.querySelector('[data-copy-label]') || btn;
+    const original = label.textContent;
+    label.textContent = (document.documentElement.lang === 'de' ? '✓ Kopiert' : '✓ Copied');
+    setTimeout(() => { label.textContent = original; }, 1600);
+  }
+  function legacyCopy(text, done) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.top = '-1000px';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch (err) {}
+    document.body.removeChild(ta);
+    if (done) done();
+  }
+  function copyToClipboard(text, btn) {
+    const ok = () => flashCopied(btn);
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(ok).catch(() => legacyCopy(text, ok));
+    } else {
+      legacyCopy(text, ok);
+    }
+  }
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-copy]');
+    if (!btn) return;
+    const text = btn.dataset.copy;
+    if (text) copyToClipboard(text, btn);
+  });
 
   /* ---------- Reveal-on-scroll for cards & gallery ---------- */
   const revealTargets = document.querySelectorAll('.service-card, .gallery-item');
