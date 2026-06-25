@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     card4_price: 'Individuelle Anfrage',
     about_eyebrow: '02 — Über mich',
     about_title: 'Hinter der Linse.',
-    about_p1: 'Seit August 2025 bin ich mit der Kamera am Spielfeldrand und im Käfig unterwegs — der Einstieg kam durch einen glücklichen Zufall über Radio Rotblau. Seither fotografiere ich regelmässig für den FC Basel und die Swiss MMA Championship (SMMAC) — und ich habe Spiele der Schweizer Nationalmannschaft fotografisch abgedeckt.',
+    about_p1: 'Seit August 2025 bin ich mit der Kamera am Spielfeldrand und im Käfig unterwegs — angefangen hat alles durch einen glücklichen Zufall über Radio Rotblau, für die ich inzwischen den Fussball fotografiere — FC Basel und die Schweizer Nationalmannschaft. Ausserdem habe ich an Events der Swiss MMA Championship (SMMAC) fotografiert.',
     about_p2: 'Mich interessiert nicht das perfekt gestellte Foto, sondern der Moment kurz davor — die Anspannung, der Schrei, der Bruchteil einer Sekunde, der über Sieg oder Niederlage entscheidet.',
     about_logo1: 'FC Basel',
     about_logo2: 'Schweizer Nationalmannschaft',
