@@ -799,6 +799,32 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
    Gallery
    ============================================ */
 .gallery { padding-bottom: 60px; }
+.gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  max-width: 1240px;
+  margin: 0 auto 30px;
+  padding: 0 32px;
+}
+.gallery-filter {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: var(--color-ink-soft);
+  padding: 9px 20px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-pill);
+  transition: color 0.2s, background 0.25s var(--ease-out), border-color 0.2s;
+}
+.gallery-filter:hover { color: var(--color-ink); border-color: var(--color-ink); }
+.gallery-filter.is-active {
+  background: var(--color-ink);
+  color: #fff;
+  border-color: var(--color-ink);
+}
+.gallery-item.is-hidden { display: none; }
 .gallery-grid {
   max-width: 1240px;
   margin: 0 auto;

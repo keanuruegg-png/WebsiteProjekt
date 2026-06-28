@@ -48,6 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
     pre_btn: 'Jetzt sichern',
     gal_eyebrow: '04 — Galerie',
     gal_title: 'Ausgewählte Aufnahmen',
+    gal_f_all: 'Alle',
+    gal_f_football: 'Fussball',
     con_eyebrow: '05 — Kontakt',
     con_title: 'Lust auf Bilder,<br>die hängen bleiben?',
     con_desc: 'Schreib mir kurz, worum es geht — Matchday, Einzelshooting, Event oder Design. Ich melde mich innert 24h zurück.',
@@ -255,9 +257,27 @@ document.addEventListener('DOMContentLoaded', () => {
     if (lastGalleryTrigger) lastGalleryTrigger.focus();
   }
 
-  galleryItems.forEach((item, idx) => item.addEventListener('click', () => {
+  galleryItems.forEach((item) => item.addEventListener('click', () => {
     lastGalleryTrigger = item;
-    openLightbox(idx, galleryItems);
+    // Navigate only within the currently visible (filtered) set
+    const visible = galleryItems.filter(it => !it.classList.contains('is-hidden'));
+    openLightbox(visible.indexOf(item), visible);
+  }));
+
+  /* ---------- Gallery category filter (All / Football / MMA) ---------- */
+  const galleryFilters = document.querySelectorAll('.gallery-filter');
+  galleryFilters.forEach(btn => btn.addEventListener('click', () => {
+    const cat = btn.dataset.filter;
+    galleryFilters.forEach(b => {
+      const on = b === btn;
+      b.classList.toggle('is-active', on);
+      b.setAttribute('aria-pressed', String(on));
+    });
+    galleryItems.forEach(item => {
+      const show = cat === 'all' || item.dataset.cat === cat;
+      item.classList.toggle('is-hidden', !show);
+      if (show) { item.style.opacity = '1'; item.style.transform = 'none'; }
+    });
   }));
   presetItems.forEach((item, idx) => item.addEventListener('click', () => {
     lastGalleryTrigger = item;
