@@ -36,7 +36,7 @@
 <link rel="stylesheet" href="fonts.css?v=1">
 
 <link rel="preload" as="image" href="images/basel-celly-scream.jpg" fetchpriority="high">
-<link rel="stylesheet" href="styles.css?v=6">
+<link rel="stylesheet" href="styles.css?v=7">
 
 <!-- ===== Structured Data ===== -->
 <script type="application/ld+json">
@@ -272,25 +272,30 @@
     <p class="section-eyebrow" data-i18n="gal_eyebrow">04 — Gallery</p>
     <h2 class="section-title" id="gallery-title" data-i18n="gal_title">Selected shots</h2>
   </div>
+  <div class="gallery-filters" role="group" aria-label="Filter gallery by sport">
+    <button class="gallery-filter is-active" data-filter="all" aria-pressed="true" data-i18n="gal_f_all">All</button>
+    <button class="gallery-filter" data-filter="football" aria-pressed="false" data-i18n="gal_f_football">Football</button>
+    <button class="gallery-filter" data-filter="mma" aria-pressed="false">MMA</button>
+  </div>
   <div class="gallery-grid">
-    <button class="gallery-item gallery-item-tall" data-lightbox-index="0" aria-label="Enlarge image"><img src="images/basel-celly-scream.jpg" alt="FC Basel goal celebration" loading="lazy" decoding="async"></button>
-    <button class="gallery-item" data-lightbox-index="1" aria-label="Enlarge image"><img src="images/nati-team-photo.jpg" alt="Switzerland national team photo" loading="lazy" decoding="async"></button>
-    <button class="gallery-item" data-lightbox-index="2" aria-label="Enlarge image"><img src="images/mma-faceoff-red-blue.jpg" alt="MMA face-off" loading="lazy" decoding="async"></button>
-    <button class="gallery-item gallery-item-tall" data-lightbox-index="3" aria-label="Enlarge image"><img src="images/koindredi-walkout.jpg" alt="Player walkout" loading="lazy" decoding="async"></button>
-    <button class="gallery-item" data-lightbox-index="4" aria-label="Enlarge image"><img src="images/duel-young-boys-basel.jpg" alt="Running duel Young Boys vs Basel" loading="lazy" decoding="async"></button>
-    <button class="gallery-item" data-lightbox-index="5" aria-label="Enlarge image"><img src="images/mma-hand-raised-winner.jpg" alt="MMA victory pose" loading="lazy" decoding="async"></button>
-    <button class="gallery-item gallery-item-tall" data-lightbox-index="6" aria-label="Enlarge image"><img src="images/goal-celebration-crowd.jpg" alt="Goal celebration with fans" loading="lazy" decoding="async"></button>
-    <button class="gallery-item" data-lightbox-index="7" aria-label="Enlarge image"><img src="images/mma-bw-kick-flare.jpg" alt="MMA kick" loading="lazy" decoding="async"></button>
-    <button class="gallery-item" data-lightbox-index="8" aria-label="Enlarge image"><img src="images/nati-shirt-celebration.jpg" alt="Switzerland goal celebration" loading="lazy" decoding="async"></button>
-    <button class="gallery-item gallery-item-tall" data-lightbox-index="9" aria-label="Enlarge image"><img src="images/mma-rear-naked-choke.jpg" alt="MMA submission" loading="lazy" decoding="async"></button>
-    <button class="gallery-item" data-lightbox-index="10" aria-label="Enlarge image"><img src="images/fcz-profile.jpg" alt="Player profile" loading="lazy" decoding="async"></button>
-    <button class="gallery-item" data-lightbox-index="11" aria-label="Enlarge image"><img src="images/mma-poster-firstchoicegym.jpg" alt="FirstChoiceGym fighters poster" loading="lazy" decoding="async"></button>
-    <button class="gallery-item gallery-item-tall" data-lightbox-index="12" aria-label="Enlarge image"><img src="images/player-grass-closeup.jpg" alt="Player close-up" loading="lazy" decoding="async"></button>
-    <button class="gallery-item" data-lightbox-index="13" aria-label="Enlarge image"><img src="images/mma-crouch-red-flare.jpg" alt="MMA fighter crouching" loading="lazy" decoding="async"></button>
-    <button class="gallery-item" data-lightbox-index="14" aria-label="Enlarge image"><img src="images/mma-cage-walkout-flare.jpg" alt="MMA walkout with flare" loading="lazy" decoding="async"></button>
-    <button class="gallery-item gallery-item-tall" data-lightbox-index="15" aria-label="Enlarge image"><img src="images/mma-poster-fighter-portrait.jpg" alt="MMA fighter portrait design" loading="lazy" decoding="async"></button>
-    <button class="gallery-item" data-lightbox-index="16" aria-label="Enlarge image"><img src="images/mma-bw-fighter-portrait.jpg" alt="MMA black and white portrait" loading="lazy" decoding="async"></button>
-    <button class="gallery-item" data-lightbox-index="17" aria-label="Enlarge image"><img src="images/mma-faceoff-stare.jpg" alt="MMA stare-down" loading="lazy" decoding="async"></button>
+    <button class="gallery-item gallery-item-tall" data-cat="football" data-lightbox-index="0" aria-label="Enlarge image"><img src="images/basel-celly-scream.jpg" alt="FC Basel goal celebration" loading="lazy" decoding="async"></button>
+    <button class="gallery-item" data-cat="football" data-lightbox-index="1" aria-label="Enlarge image"><img src="images/nati-team-photo.jpg" alt="Switzerland national team photo" loading="lazy" decoding="async"></button>
+    <button class="gallery-item" data-cat="mma" data-lightbox-index="2" aria-label="Enlarge image"><img src="images/mma-faceoff-red-blue.jpg" alt="MMA face-off" loading="lazy" decoding="async"></button>
+    <button class="gallery-item gallery-item-tall" data-cat="football" data-lightbox-index="3" aria-label="Enlarge image"><img src="images/koindredi-walkout.jpg" alt="Player walkout" loading="lazy" decoding="async"></button>
+    <button class="gallery-item" data-cat="football" data-lightbox-index="4" aria-label="Enlarge image"><img src="images/duel-young-boys-basel.jpg" alt="Running duel Young Boys vs Basel" loading="lazy" decoding="async"></button>
+    <button class="gallery-item" data-cat="mma" data-lightbox-index="5" aria-label="Enlarge image"><img src="images/mma-hand-raised-winner.jpg" alt="MMA victory pose" loading="lazy" decoding="async"></button>
+    <button class="gallery-item gallery-item-tall" data-cat="football" data-lightbox-index="6" aria-label="Enlarge image"><img src="images/goal-celebration-crowd.jpg" alt="Goal celebration with fans" loading="lazy" decoding="async"></button>
+    <button class="gallery-item" data-cat="mma" data-lightbox-index="7" aria-label="Enlarge image"><img src="images/mma-bw-kick-flare.jpg" alt="MMA kick" loading="lazy" decoding="async"></button>
+    <button class="gallery-item" data-cat="football" data-lightbox-index="8" aria-label="Enlarge image"><img src="images/nati-shirt-celebration.jpg" alt="Switzerland goal celebration" loading="lazy" decoding="async"></button>
+    <button class="gallery-item gallery-item-tall" data-cat="mma" data-lightbox-index="9" aria-label="Enlarge image"><img src="images/mma-rear-naked-choke.jpg" alt="MMA submission" loading="lazy" decoding="async"></button>
+    <button class="gallery-item" data-cat="football" data-lightbox-index="10" aria-label="Enlarge image"><img src="images/fcz-profile.jpg" alt="Player profile" loading="lazy" decoding="async"></button>
+    <button class="gallery-item" data-cat="mma" data-lightbox-index="11" aria-label="Enlarge image"><img src="images/mma-poster-firstchoicegym.jpg" alt="FirstChoiceGym fighters poster" loading="lazy" decoding="async"></button>
+    <button class="gallery-item gallery-item-tall" data-cat="football" data-lightbox-index="12" aria-label="Enlarge image"><img src="images/player-grass-closeup.jpg" alt="Player close-up" loading="lazy" decoding="async"></button>
+    <button class="gallery-item" data-cat="mma" data-lightbox-index="13" aria-label="Enlarge image"><img src="images/mma-crouch-red-flare.jpg" alt="MMA fighter crouching" loading="lazy" decoding="async"></button>
+    <button class="gallery-item" data-cat="mma" data-lightbox-index="14" aria-label="Enlarge image"><img src="images/mma-cage-walkout-flare.jpg" alt="MMA walkout with flare" loading="lazy" decoding="async"></button>
+    <button class="gallery-item gallery-item-tall" data-cat="mma" data-lightbox-index="15" aria-label="Enlarge image"><img src="images/mma-poster-fighter-portrait.jpg" alt="MMA fighter portrait design" loading="lazy" decoding="async"></button>
+    <button class="gallery-item" data-cat="mma" data-lightbox-index="16" aria-label="Enlarge image"><img src="images/mma-bw-fighter-portrait.jpg" alt="MMA black and white portrait" loading="lazy" decoding="async"></button>
+    <button class="gallery-item" data-cat="mma" data-lightbox-index="17" aria-label="Enlarge image"><img src="images/mma-faceoff-stare.jpg" alt="MMA stare-down" loading="lazy" decoding="async"></button>
   </div>
 </section>
 
@@ -469,6 +474,6 @@
   </div>
 </div>
 
-<script src="script.js?v=11"></script>
+<script src="script.js?v=12"></script>
 </body>
 </html>
