@@ -373,8 +373,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   transform: translate(-50%, -50%);
   width: 128%;
   height: 250%;
-  background: radial-gradient(ellipse at center, rgba(8,8,12,0.6) 0%, rgba(8,8,12,0.3) 44%, transparent 68%);
-  filter: blur(28px);
+  background: radial-gradient(ellipse at center, rgba(8,8,12,0.4) 0%, rgba(8,8,12,0.16) 46%, transparent 70%);
+  filter: blur(30px);
   pointer-events: none;
 }
 /* Frosted "liquid glass" letters — the photos show through, blurred */
