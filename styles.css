@@ -361,33 +361,40 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
-  padding: clamp(20px, 3vw, 34px) clamp(30px, 6vw, 74px);
-  border-radius: 28px;
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.22);
-  -webkit-backdrop-filter: blur(18px) saturate(1.35);
-  backdrop-filter: blur(18px) saturate(1.35);
-  box-shadow:
-    0 34px 90px -34px rgba(0,0,0,0.75),
-    inset 0 1px 0 rgba(255,255,255,0.4),
-    inset 0 -1px 0 rgba(255,255,255,0.06);
+  gap: clamp(10px, 1.8vh, 18px);
 }
-.hero-nameplate-name {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(40px, 8.2vw, 100px);
-  line-height: 0.94;
-  letter-spacing: 0.01em;
-  color: #fff;
-  text-shadow: 0 2px 24px rgba(0,0,0,0.35);
+/* Soft ambient darkening behind the name (no box) so the glass letters read */
+.hero-nameplate::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 46%;
+  transform: translate(-50%, -50%);
+  width: 128%;
+  height: 250%;
+  background: radial-gradient(ellipse at center, rgba(8,8,12,0.6) 0%, rgba(8,8,12,0.3) 44%, transparent 68%);
+  filter: blur(28px);
+  pointer-events: none;
+}
+/* Frosted "liquid glass" letters — the photos show through, blurred */
+.hero-glass-name {
+  width: min(92vw, 960px);
+  height: clamp(64px, 15vh, 168px);
+  background: rgba(255,255,255,0.1);
+  -webkit-backdrop-filter: blur(9px) brightness(1.5) saturate(1.2);
+  backdrop-filter: blur(9px) brightness(1.5) saturate(1.2);
+  -webkit-mask: center / contain no-repeat url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='960'%20height='170'%20viewBox='0%200%20960%20170'%3E%3Ctext%20x='480'%20y='130'%20text-anchor='middle'%20font-family='Arial,Helvetica,sans-serif'%20font-weight='900'%20font-size='150'%20letter-spacing='3'%20fill='%23ffffff'%3EKIIFRAMES%3C/text%3E%3C/svg%3E");
+          mask: center / contain no-repeat url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='960'%20height='170'%20viewBox='0%200%20960%20170'%3E%3Ctext%20x='480'%20y='130'%20text-anchor='middle'%20font-family='Arial,Helvetica,sans-serif'%20font-weight='900'%20font-size='150'%20letter-spacing='3'%20fill='%23ffffff'%3EKIIFRAMES%3C/text%3E%3C/svg%3E");
+  filter: drop-shadow(0 0 1px rgba(255,255,255,0.5)) drop-shadow(0 4px 10px rgba(0,0,0,0.6));
 }
 .hero-nameplate-sub {
   font-family: var(--font-mono);
   font-size: clamp(11px, 1.35vw, 14px);
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.74);
+  color: rgba(255,255,255,0.8);
+  text-shadow: 0 1px 14px rgba(0,0,0,0.75);
 }
 
 /* Navbar over the dark hero (top state, before scroll) */
