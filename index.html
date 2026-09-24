@@ -36,7 +36,7 @@
 <link rel="stylesheet" href="fonts.css?v=1">
 
 <link rel="preload" as="image" href="images/basel-celly-scream.jpg" fetchpriority="high">
-<link rel="stylesheet" href="styles.css?v=12">
+<link rel="stylesheet" href="styles.css?v=13">
 
 <!-- ===== Structured Data ===== -->
 <script type="application/ld+json">
@@ -130,23 +130,7 @@
   </div>
   <div class="hero-topfade" aria-hidden="true"></div>
   <div class="hero-nameplate">
-    <svg class="hero-glass-name" viewBox="0 0 1000 210" role="img" aria-label="KIIFRAMES" preserveAspectRatio="xMidYMid meet">
-      <defs>
-        <filter id="kgClear" x="-16%" y="-60%" width="132%" height="220%">
-          <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="b"/>
-          <feSpecularLighting in="b" surfaceScale="8" specularConstant="1.5" specularExponent="30" lighting-color="#ffffff" result="s">
-            <feDistantLight azimuth="235" elevation="55"/>
-          </feSpecularLighting>
-          <feComposite in="s" in2="SourceAlpha" operator="in" result="sc"/>
-          <feMerge>
-            <feMergeNode in="SourceGraphic"/>
-            <feMergeNode in="sc"/>
-          </feMerge>
-        </filter>
-      </defs>
-      <text x="500" y="153" text-anchor="middle" font-family="'Archivo Expanded','Archivo',system-ui,sans-serif" font-weight="800" font-size="158" letter-spacing="1"
-            fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.45" stroke-width="1.4" filter="url(#kgClear)">KIIFRAMES</text>
-    </svg>
+    <div class="hero-glass-name" role="img" aria-label="KIIFRAMES"></div>
     <span class="hero-nameplate-sub" data-i18n="hero_eyebrow">Basel · Sports Photography &amp; Design</span>
   </div>
 </section>
