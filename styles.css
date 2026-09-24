@@ -379,10 +379,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 /* Frosted "liquid glass" letters — the photos show through, blurred */
 .hero-glass-name {
-  display: block;
-  width: min(92vw, 980px);
-  height: auto;
-  filter: drop-shadow(0 10px 22px rgba(0,0,0,0.55));
+  width: min(94vw, 1000px);
+  height: clamp(66px, 16vh, 172px);
+  background: rgba(255,255,255,0.05);
+  -webkit-backdrop-filter: blur(8px) brightness(1.08);
+  backdrop-filter: blur(8px) brightness(1.08);
+  -webkit-mask: center / contain no-repeat url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='1120'%20height='180'%20viewBox='0%200%201120%20180'%3E%3Ctext%20x='560'%20y='135'%20text-anchor='middle'%20font-family='Arial,Helvetica,sans-serif'%20font-weight='900'%20font-size='140'%20letter-spacing='2'%20fill='%23ffffff'%3EKIIFRAMES%3C/text%3E%3C/svg%3E");
+          mask: center / contain no-repeat url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='1120'%20height='180'%20viewBox='0%200%201120%20180'%3E%3Ctext%20x='560'%20y='135'%20text-anchor='middle'%20font-family='Arial,Helvetica,sans-serif'%20font-weight='900'%20font-size='140'%20letter-spacing='2'%20fill='%23ffffff'%3EKIIFRAMES%3C/text%3E%3C/svg%3E");
+  filter: drop-shadow(0 0 1px rgba(255,255,255,0.6)) drop-shadow(0 3px 8px rgba(0,0,0,0.5));
 }
 .hero-nameplate-sub {
   font-family: var(--font-mono);
