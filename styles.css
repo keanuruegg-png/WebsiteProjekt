@@ -335,6 +335,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   box-shadow: 0 16px 36px -12px rgba(0,0,0,0.75);
   border: 1px solid rgba(255,255,255,0.07);
 }
+/* Tall portrait shots: pull the crop up so the subject's head stays in frame */
+.marquee-row img[src*="nati-shirt-celebration"] { object-position: center 20%; }
 .marquee-left  { animation: marquee-l 58s linear infinite; }
 .marquee-right { animation: marquee-r 58s linear infinite; }
 .marquee-row:nth-child(2) { animation-duration: 72s; }
