@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     m_football: 'FUSSBALL',
     svc_eyebrow: '01 Leistungen',
     svc_title: 'Was ich für dich festhalte',
-    svc_desc: 'Vier Bereiche, ein Anspruch: Bilder und Designs, die nach mehr aussehen als nur ein Foto vom Spieltag.',
     card1_h3: 'Sportfotografie<br>Fussball',
     card1_price: 'ab CHF 25 / Spieler',
     card2_h3: 'MMA<br>Fotografie',
