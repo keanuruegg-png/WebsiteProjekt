@@ -47,22 +47,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Subtle full-page photo behind the light sections. It's fixed and sits at
-   z-index -1, so the opaque dark sections (hero, presets) naturally cover it
-   and it only shows through the light sections (services, about, gallery,
-   contact, footer). Swap the image url below to change the shot. */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background: url("images/basel-celly-scream.jpg") center 35% / cover no-repeat;
-  filter: blur(3px);
-  transform: scale(1.06); /* hides the soft blurred edges */
-  opacity: 0.14;
-  pointer-events: none;
-}
-
 img { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 button { font-family: inherit; border: none; background: none; cursor: pointer; }
