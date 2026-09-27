@@ -223,9 +223,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------- Lightbox (gallery + presets) ---------- */
   const galleryItems = Array.from(document.querySelectorAll('[data-lightbox-index]'));
+  const galleryTiles = Array.from(document.querySelectorAll('.gallery-grid .gallery-item'));
+  const galleryVideoItems = Array.from(document.querySelectorAll('.gallery-item-video'));
   const presetItems = Array.from(document.querySelectorAll('[data-preset-lightbox-index]'));
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxVideo = document.getElementById('lightboxVideo');
   const lightboxCounter = document.getElementById('lightboxCounter');
   let currentLightboxIndex = 0;
   let activeLightboxSet = galleryItems;
@@ -242,16 +245,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 120);
     lightboxCounter.textContent = (currentLightboxIndex + 1) + ' / ' + activeLightboxSet.length;
   }
+  function setLightboxMode(isVideo) {
+    lightboxImg.classList.toggle('is-hidden', isVideo);
+    lightboxVideo.classList.toggle('is-hidden', !isVideo);
+    lightboxCounter.classList.toggle('is-hidden', isVideo);
+    lightbox.querySelectorAll('.lightbox-nav').forEach(n => n.classList.toggle('is-hidden', isVideo));
+  }
   function openLightbox(index, set) {
+    setLightboxMode(false);
     activeLightboxSet = set || galleryItems;
     showLightboxImage(index);
     lightbox.classList.add('open');
     document.body.style.overflow = 'hidden';
     lightbox.querySelector('.lightbox-close').focus();
   }
+  function openVideoLightbox(src) {
+    setLightboxMode(true);
+    lightboxVideo.src = src;
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    lightbox.querySelector('.lightbox-close').focus();
+    lightboxVideo.play().catch(() => {});
+  }
   function closeLightbox() {
     lightbox.classList.remove('open');
     document.body.style.overflow = '';
+    if (!lightboxVideo.classList.contains('is-hidden')) {
+      lightboxVideo.pause();
+      lightboxVideo.removeAttribute('src');
+      lightboxVideo.load();
+    }
     if (lastGalleryTrigger) lastGalleryTrigger.focus();
   }
 
@@ -261,8 +284,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const visible = galleryItems.filter(it => !it.classList.contains('is-hidden'));
     openLightbox(visible.indexOf(item), visible);
   }));
+  galleryVideoItems.forEach((item) => item.addEventListener('click', () => {
+    lastGalleryTrigger = item;
+    openVideoLightbox(item.dataset.video);
+  }));
 
-  /* ---------- Gallery category filter (All / Football / MMA) ---------- */
+  /* ---------- Gallery category filter (All / Football / MMA / Video) ---------- */
   const galleryFilters = document.querySelectorAll('.gallery-filter');
   galleryFilters.forEach(btn => btn.addEventListener('click', () => {
     const cat = btn.dataset.filter;
@@ -271,7 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
       b.classList.toggle('is-active', on);
       b.setAttribute('aria-pressed', String(on));
     });
-    galleryItems.forEach(item => {
+    galleryTiles.forEach(item => {
       const show = cat === 'all' || item.dataset.cat === cat;
       item.classList.toggle('is-hidden', !show);
       if (show) { item.style.opacity = '1'; item.style.transform = 'none'; }
@@ -293,9 +320,10 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', (e) => {
     // Lightbox takes priority (highest layer)
     if (lightbox.classList.contains('open')) {
+      const videoMode = !lightboxVideo.classList.contains('is-hidden');
       if (e.key === 'Escape') closeLightbox();
-      else if (e.key === 'ArrowLeft') showLightboxImage(currentLightboxIndex - 1);
-      else if (e.key === 'ArrowRight') showLightboxImage(currentLightboxIndex + 1);
+      else if (e.key === 'ArrowLeft' && !videoMode) showLightboxImage(currentLightboxIndex - 1);
+      else if (e.key === 'ArrowRight' && !videoMode) showLightboxImage(currentLightboxIndex + 1);
       else if (e.key === 'Tab') trapFocus(lightbox, e);
       return;
     }
