@@ -978,8 +978,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 .gallery-item:hover img { transform: scale(1.08); filter: grayscale(0); }
 .gallery-item:hover::after { opacity: 1; }
-/* Video tiles (portrait, via .gallery-item-tall) */
-.gallery-item-video { cursor: pointer; }
+/* Video tiles (landscape, to match the 16:9 clips) */
+.gallery-item-video { grid-column: span 2; grid-row: span 2; cursor: pointer; }
 .gallery-play {
   position: absolute;
   inset: 0;
@@ -1006,6 +1006,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 @media (max-width: 560px) {
   .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 240px; }
   .gallery-item-tall { grid-row: span 1; }
+  .gallery-item-video { grid-column: span 1; grid-row: span 1; }
 }
 
 /* ============================================
@@ -1316,11 +1317,17 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 .lightbox-stage video {
   display: block;
-  max-width: min(88vw, 1200px);
-  max-height: 84vh;
+  max-width: min(92vw, 1200px);
+  max-height: 86vh;
   width: auto;
   height: auto;
   background: #000;
+}
+/* In video mode the stage grows to the video so nothing (incl. the control
+   bar with volume/fullscreen) gets clipped by the image-sized stage. */
+.lightbox--video .lightbox-stage {
+  max-width: min(92vw, 1200px);
+  max-height: 86vh;
 }
 .lightbox .is-hidden { display: none !important; }
 .lightbox-close {

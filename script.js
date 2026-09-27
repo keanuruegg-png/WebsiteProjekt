@@ -246,6 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
     lightboxCounter.textContent = (currentLightboxIndex + 1) + ' / ' + activeLightboxSet.length;
   }
   function setLightboxMode(isVideo) {
+    lightbox.classList.toggle('lightbox--video', isVideo);
     lightboxImg.classList.toggle('is-hidden', isVideo);
     lightboxVideo.classList.toggle('is-hidden', !isVideo);
     lightboxCounter.classList.toggle('is-hidden', isVideo);
