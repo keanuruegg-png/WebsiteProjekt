@@ -272,8 +272,11 @@
     <button class="gallery-filter is-active" data-filter="all" aria-pressed="true" data-i18n="gal_f_all">All</button>
     <button class="gallery-filter" data-filter="football" aria-pressed="false" data-i18n="gal_f_football">Football</button>
     <button class="gallery-filter" data-filter="mma" aria-pressed="false">MMA</button>
+    <button class="gallery-filter" data-filter="video" aria-pressed="false">Video</button>
   </div>
   <div class="gallery-grid">
+    <button class="gallery-item gallery-item-tall gallery-item-video" data-cat="video" data-video="videos/smmac.mp4" aria-label="Play SMMAC video"><img src="images/video-poster-smmac.jpg" alt="SMMAC MMA event video" loading="lazy" decoding="async"><span class="gallery-play" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button>
+    <button class="gallery-item gallery-item-tall gallery-item-video" data-cat="video" data-video="videos/release-party.mp4" aria-label="Play release party video"><img src="images/video-poster-release.jpg" alt="Release party video" loading="lazy" decoding="async"><span class="gallery-play" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button>
     <button class="gallery-item gallery-item-tall" data-cat="football" data-lightbox-index="0" aria-label="Enlarge image"><img src="images/basel-celly-scream.jpg" alt="FC Basel goal celebration" loading="lazy" decoding="async"></button>
     <button class="gallery-item" data-cat="football" data-lightbox-index="1" aria-label="Enlarge image"><img src="images/nati-team-photo.jpg" alt="Switzerland national team photo" loading="lazy" decoding="async"></button>
     <button class="gallery-item" data-cat="mma" data-lightbox-index="2" aria-label="Enlarge image"><img src="images/mma-faceoff-red-blue.jpg" alt="MMA face-off" loading="lazy" decoding="async"></button>
@@ -367,7 +370,7 @@
   <div class="lightbox-blur-bg" aria-hidden="true"></div>
   <button class="lightbox-close" data-lightbox-close aria-label="Close">✕</button>
   <button class="lightbox-nav lightbox-prev" data-lightbox-prev aria-label="Previous image"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M14 4L7 11l7 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-  <div class="lightbox-stage"><img src="" alt="" id="lightboxImg"></div>
+  <div class="lightbox-stage"><img src="" alt="" id="lightboxImg"><video id="lightboxVideo" class="is-hidden" controls playsinline preload="metadata"></video></div>
   <button class="lightbox-nav lightbox-next" data-lightbox-next aria-label="Next image"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M8 4l7 7-7 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
   <div class="lightbox-counter" id="lightboxCounter" aria-live="polite"></div>
 </div>
